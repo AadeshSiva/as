@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aadesh Siva</title>
+    <style>
+        * {
+            margin: 0;
+
+        }
+
+        ::-webkit-scrollbar {
+            color: transparent;
+        }
+
+        input,
+        textarea,
+        button,
+        select {
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        * {
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+        }
+
+        a {
+            text-decoration: none;
+            margin: 0;
+            padding: 0;
+            white-space: nowrap;
+            color: white;
+
+        }
+
+
+        @font-face {
+            font-family: 'regm';
+            src: url(regmedi.otf);
+        }
+
+        @font-face {
+            font-family: 'reg';
+            src: url(regular.otf);
+        }
+
+        body {
+            width: 100vw;
+            padding: 0;
+            margin: 0;
+            background-color: #111111;
+            overflow-x: hidden;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .nav {
+            width: 100vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .nav img {
+            height: 1.5em;
+            margin: 2em;
+        }
+
+        .nav p {
+            margin: 2.5em 2em;
+            font-family: regm;
+            padding: 0.5em 1em;
+            background-color: rgb(55, 55, 55);
+            border-radius: 25px;
+            user-select: none;
+            cursor: pointer;
+            transition-duration: 0.5s;
+
+        }
+
+        .nav p:hover {
+            background-color: #585858;
+        }
+
+        .info {
+            margin-top: 1em;
+            color: white;
+            font-family: regm;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 4.5em;
+        }
+
+        .info h5 {
+            font-size: smaller;
+            font-family: reg;
+            padding: 0.5em 1em;
+            background-color: rgb(58, 58, 58);
+            border-radius: 25px;
+            letter-spacing: 1px;
+            display: flex;
+            gap: 0.6em;
+
+        }
+
+
+
+        .info h1 {
+            font-size: 2.2em;
+            font-weight: 500;
+            animation: fadeInUp 0.5s ease-in;
+
+        }
+
+        .info p {
+            font-size: small;
+            font-weight: 400;
+            animation: fadeInUp 0.8s ease-in;
+
+        }
+
+        .projectcontainer {
+            margin-top: 4em;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .protxt {
+            width: 80vw;
+            color: white;
+            font-size: x-small;
+            font-family: monospace;
+        }
+
+        .projects {
+            margin: 1.5em 0;
+        }
+
+        .projectcontainer img {
+            width: 85vw;
+        }
+
+        .proinfoconout {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .proinfocon {
+            color: white;
+            font-family: regm;
+        }
+
+        .proinfocon h4 {
+            margin: 0.7em 0 0.1em 0.2em;
+            font-size: medium;
+            letter-spacing: 0.5px;
+
+        }
+
+        .proinfocon p {
+            margin: 0.4em 0 0 0.3em;
+            font-family: reg;
+            font-size: small;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .proinfoconout .arrow {
+            margin-top: 0.5em;
+            width: 0.7em;
+            padding: 1em 2em;
+            border-radius: 20px;
+            background-color: #272727;
+            cursor: pointer;
+            transition-duration: 0.5s;
+        }
+
+        .arrow:hover {
+            background-color: #585858;
+
+        }
+
+        .footer {
+            width: 100vw;
+            margin: 2em 0 1.5em 0;
+            display: grid;
+            place-items: center;
+            user-select: none;
+        }
+
+        .contactbottom {
+            font-family: regm;
+            font-size: small;
+            padding: 0.7em 1.5em;
+            color: hsl(0, 0%, 100%);
+            background-color: #282828;
+            border-radius: 25px;
+            transition-duration: 0.5s;
+
+        }
+
+        .contactbottom:hover {
+            background-color: #585858;
+        }
+
+        .footer .social {
+            margin: 2em 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer a {
+            margin: 0 1em;
+            font-size: x-small;
+            font-family: regm;
+            color: #bcbcbc;
+            transition-duration: 0.5s;
+
+        }
+
+        .footer a:hover {
+            color: white;
+        }
+
+        .footer .inner {
+            height: 8em;
+            width: 93vw;
+            background: linear-gradient(to bottom right, rgb(34, 34, 34), rgb(53, 53, 53));
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            color: white;
+            font-family: regm;
+            font-size: x-small;
+        }
+
+        .cover {
+            height: 100svh;
+            width: 100vw;
+            position: fixed;
+            pointer-events: none;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            z-index: 100;
+        }
+
+        .optionscon {
+            height: 3.2em;
+            padding: 0 0.5em;
+            aspect-ratio: 1/2;
+            background: rgba(162, 162, 162, 0.45);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(8.3px);
+            -webkit-backdrop-filter: blur(8.3px);
+            margin: 1em 0;
+            position: fixed;
+            border-radius: 30px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+            pointer-events: all;
+            z-index: 1000;
+
+        }
+
+        .optionscon.hidden {
+            transform: translateY(270%);
+        }
+
+        .optionscon .options {
+            font-size: medium;
+            color: white;
+            font-family: reg;
+            font-weight: bolder;
+            padding: 0.5em 1.5em;
+            border-radius: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+
+        }
+
+        .options img {
+            height: 0.5em;
+        }
+
+        #hello {
+
+            outline: 1px solid white;
+
+        }
+
+        .over {
+            height: 100svh;
+            width: 100vw;
+            background: rgba(0, 0, 0, 0.08);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(11.9px);
+            -webkit-backdrop-filter: blur(11.9px);
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            overflow: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .aboutmecontainer {
+            height: 100svh;
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 0;
+            overflow: hidden;
+            overflow-y: scroll;
+        }
+
+        .aboutme {
+            margin-top: 2em;
+            width: 85vw;
+            display: flex;
+            flex-direction: column;
+            border-radius: 17px;
+            background: rgba(255, 255, 255, 0.347);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(9.6px);
+            -webkit-backdrop-filter: blur(9.6px);
+        }
+
+        .dp {
+            height: 10em;
+            margin: 2em 0 0 0;
+            animation: fadeInUp 0.5s ease-in;
+
+        }
+
+        .aboutme h4,
+        p {
+            margin: 1em 2em;
+            font-family: regm;
+
+        }
+
+        .aboutme p {
+            font-size: small;
+            line-height: 1.5em;
+            animation: fadeInUp 0.5s ease-in;
+
+        }
+
+        .aboutme p {
+            margin-bottom: 0.5em;
+        }
+
+        .infoabt {
+            color: #000000;
+            margin: 1.5em 1em 1.5em 0;
+        }
+
+        .infoabt a,
+        i {
+            font-style: italic;
+            color: hsl(240, 73%, 41%);
+        }
+
+
+
+        .skillscon {
+            width: 85vw;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+        }
+
+        .skillscon .skills {
+            padding: 1em;
+            display: flex;
+            border-radius: 15px;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.347);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(9.6px);
+            -webkit-backdrop-filter: blur(9.6px);
+            font-family: regm;
+            font-size: smaller;
+            animation: fadeInUp 0.5s ease-in;
+
+        }
+
+        .skillscon p {
+            color: white;
+            font-size: small;
+        }
+
+        .skillscon img {
+            width: 1em;
+        }
+
+        .skills:last-child {
+            margin-bottom: 1em;
+        }
+
+        .socialicon {
+            margin: 1em 0 5em 0;
+            width: 85vw;
+            background: rgba(255, 255, 255, 0.347);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(9.6px);
+            -webkit-backdrop-filter: blur(9.6px);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 15px;
+        }
+
+        .socialicon img {
+            height: 1em;
+            margin: 1em;
+        }
+
+        @media(min-width:720px) {
+            .projectcontainer {
+                margin-top: 4em;
+                width: 100vw;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+
+            .projectcontainer img {
+                width: 45vw;
+            }
+
+        }
+    </style>
+    <script>
+
+        var lastScrollTop = 0;
+
+        window.addEventListener("scroll", function () {
+            var st = window.pageYOffset || document.documentElement.scrollTop;
+            var optionscon = document.getElementById("optionscon");
+
+            // Check if the user is scrolling down
+            if (st > lastScrollTop) {
+                optionscon.classList.add("hidden");
+            } else {
+                // Check if the user is scrolling up or has reached the bottom
+                if (st + window.innerHeight >= document.body.offsetHeight) {
+                    optionscon.classList.add("hidden");
+                } else {
+                    optionscon.classList.remove("hidden");
+                }
+            }
+
+            lastScrollTop = st <= 0 ? 0 : st;
+        });
+
+
+        function opn(a) {
+            const over = document.getElementById('over');
+            const hello = document.getElementById('hello');
+            const about = document.getElementById('about');
+            const news = document.getElementById('news');
+            const body = document.getElementById('body');
+            const aboutme = document.getElementById('aboutmecontainer');
+            if (a == '0') {
+                body.style.overflowY = 'scroll';
+                aboutme.style.display = 'none'
+                over.style.display = 'none';
+                about.style.outline = 'none';
+                news.style.outline = 'none';
+                hello.style.outline = '1px solid white';
+
+            }
+            else if (a == '1') {
+                aboutme.style.display = 'flex'
+                body.style.overflowY = 'hidden';
+                over.style.display = 'flex';
+                about.style.outline = '1px solid white';
+                news.style.outline = 'none';
+                hello.style.outline = 'none';
+            }
+            else if (a == '2') {
+                body.style.overflowY = 'hidden';
+                aboutme.style.display = 'none'
+                over.style.display = 'flex';
+                about.style.outline = 'none';
+                news.style.outline = '1px solid white';
+                hello.style.outline = 'none';
+            }
+        }
+
+    </script>
+</head>
+
+<body id="body">
+
+    <div class="cover">
+        <div id="optionscon" class="optionscon">
+            <div id="hello" onclick="opn(0)" class="options ">Hello</div>
+            <div id="about" onclick="opn(1)" class="options">About</div>
+            <div id="news" onclick="opn(2)" class="options">News <img src="red.svg" alt="">
+            </div>
+        </div>
+    </div>
+    <div id="over" class="over">
+        <div id="aboutmecontainer" class="aboutmecontainer">
+            <div class="aboutme">
+                <img src="dp.svg" alt="" class="dp">
+                <div class="infoabt">
+                    <h4>Aadesh Siva</h4>
+                    <p>🚀 Born 5/11/2004: Tech enthusiast since '04. <br>
+
+                        🎓 Graduated from <a href="https://www.petitseminaire.org.in/">Petit Seminare</a> : 12 years of
+                        a
+                        solid educational foundation. <br>
+                        🌐 Diploma level Certificate: Have a Diploma in FullStack Web Dev. <br>
+
+                        🧠 B.Tech in AI and DS at <a href="https://www.smvec.ac.in/">SMVEC</a> : Exploring the frontiers
+                        of
+                        Artificial Intelligence
+                        with Data
+                        Science. <br>
+
+                        💻 Actively involved in cutting-edge Machine Learning projects. <br>
+
+                        💡 Eager to contribute to and thrive in the dynamic world of startups. <br><br>
+                        <a href="mailto:iaadeshsiva@gmail.com">📧<i> iaadeshsiva@gmail.com</i></a><br>
+                    </p>
+                </div>
+            </div>
+            <div class="skillscon">
+                <p>Skills &#9660;</p>
+                <div class="skills">HTML / CSS / JS</div>
+                <div class="skills">NodeJS / Flask / Django</div>
+                <div class="skills">C / C++ / Python /Java </div>
+                <div class="skills">SQL / MongoDB </div>
+                <div class="skills">UI / UX</div>
+                <div class="skills">Video / Image editing</div>
+                <div class="skills">Digital marketing</div>
+            </div>
+            <div class="socialicon">
+                <a href="https://github.com/AadeshSiva"><img src="git.svg" alt=""></a>
+                <a href="https://www.linkedin.com/in/aadeshsiva/"><img src="linkedin.svg" alt=""></a>
+                <a href="https://www.instagram.com/aadeshsiv/"><img src="insta.svg" alt=""></a>
+                <a href="https://youtube.com/@AadeshSiva?si=-V7bMaUCaulid7GV"><img src="youtube.svg" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <div class="nav">
+        <img src="logo.svg" alt="" class="logo">
+        <a href="mailto:iaadeshsiva@gmail.com">
+            <p class="contact">Contact</p>
+        </a>
+    </div>
+    <div class="info">
+        <h5>
+            <img src="green.svg" alt="">Avaiable for new opportunities
+        </h5>
+        <h1>FullStack Web <br> Developer</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur <br> adipisicing elit. Sit, tenetur repellat illum <br>veniam iusto
+            Lorem, ipsum.
+            minima?
+        </p>
+    </div>
+    <div class="projectcontainer">
+        <p class="protxt">Projects &#9660;
+        </p>
+        <!-- 263*175 -->
+        <div class="projects"><img src="pix.svg" alt="">
+            <div class="proinfoconout">
+                <div class="proinfocon">
+                    <h4>PiXel Language Model</h4>
+                    <p>Chatbot,NLP,Video processing.</p>
+                </div>
+                <img class="arrow" src="arrow.svg" alt="">
+            </div>
+
+        </div>
+        <div class="projects"><img src="fourstarq.svg" alt="">
+            <div class="proinfoconout">
+                <div class="proinfocon">
+                    <h4>Fourstarq</h4>
+                    <p>e-commerce,FrontEnd.</p>
+                </div>
+                <img class="arrow" src="arrow.svg" alt="">
+            </div>
+        </div>
+        <div class="projects"><img src="pix.svg" alt="">
+            <div class="proinfoconout">
+                <div class="proinfocon">
+                    <h4>Lorem ipsum dolor</h4>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+                <img class="arrow" src="arrow.svg" alt="">
+            </div>
+        </div>
+        <!-- to add -->
+        <div class="projects"><img src="pix.svg" alt="">
+            <div class="proinfoconout">
+                <div class="proinfocon">
+                    <h4>Lorem ipsum dolor</h4>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+                <img class="arrow" src="arrow.svg" alt="">
+            </div>
+        </div>
+        <!-- to add -->
+    </div>
+    <div class="footer">
+        <a href="mailto:iaadeshsiva@gmail.com">
+            <div class="contactbottom">Contact</div>
+        </a>
+        <div class="social">
+            <a href="https://github.com/AadeshSiva">GitHub</a>
+            <a href="https://www.linkedin.com/in/aadeshsiva/">LinkedIn</a>
+            <a href="https://www.instagram.com/aadeshsiv/">Instagram</a>
+            <a href="https://youtube.com/@AadeshSiva?si=-V7bMaUCaulid7GV">Youtube</a>
+        </div>
+        <div class="inner">&copy; Aadesh Siva</div>
+    </div>
+</body>
+
+</html>

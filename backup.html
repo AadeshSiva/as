@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aadesh Siva</title>
+    <style>
+        * {
+            margin: 0;
+
+        }
+
+        input,
+        textarea,
+        button,
+        select {
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        * {
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+        }
+
+        a {
+            text-decoration: none;
+            margin: 0;
+            padding: 0;
+            white-space: nowrap;
+        }
+
+
+        @font-face {
+            font-family: 'regm';
+            src: url(regmedi.otf);
+        }
+
+        @font-face {
+            font-family: 'reg';
+            src: url(regular.otf);
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: #111111;
+            overflow-x: hidden;
+        }
+
+        .nav {
+            width: 100vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .nav img {
+            height: 1.5em;
+            margin: 2em;
+        }
+
+        .nav p {
+            margin: 2em;
+            font-family: regm;
+            padding: 0.5em 1em;
+            background-color: rgb(55, 55, 55);
+            border-radius: 25px;
+            user-select: none;
+            cursor: pointer;
+            transition-duration: 0.5s;
+
+        }
+
+        .nav p:hover {
+            background-color: #585858;
+        }
+
+        .info {
+            margin-top: 3em;
+            color: white;
+            font-family: regm;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 4.5em;
+        }
+
+        .info h5 {
+            font-size: smaller;
+            font-family: reg;
+            padding: 0.5em 1em;
+            background-color: rgb(58, 58, 58);
+            border-radius: 25px;
+            letter-spacing: 1px;
+            display: flex;
+            gap: 0.6em;
+        }
+
+
+
+        .info h1 {
+            font-size: 2.2em;
+            font-weight: 500;
+        }
+
+        .info p {
+            font-size: small;
+            font-weight: 400;
+
+        }
+
+        .projectcontainer {
+            margin-top: 4em;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .protxt {
+            width: 80vw;
+            color: white;
+            font-size: x-small;
+            font-family: monospace;
+        }
+
+        .projects {
+            margin: 1.5em 0;
+        }
+
+        .projectcontainer img {
+            width: 80vw;
+        }
+
+        .proinfoconout {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .proinfocon {
+            color: white;
+            font-family: regm;
+        }
+
+        .proinfocon h4 {
+            margin: 0.7em 0 0.1em 0.2em;
+            font-size: medium;
+        }
+
+        .proinfocon p {
+            margin: 0.2em 0 0 0.3em;
+            font-family: reg;
+            font-size: small;
+            font-weight: bold;
+        }
+
+        .proinfoconout .arrow {
+            margin-top: 0.5em;
+            width: 0.7em;
+            padding: 1em 2em;
+            border-radius: 20px;
+            background-color: #272727;
+            cursor: pointer;
+            transition-duration: 0.5s;
+        }
+
+        .arrow:hover {
+            background-color: #585858;
+
+        }
+
+        .footer {
+            width: 100vw;
+            margin: 3em 0 1.5em 0;
+            display: grid;
+            place-items: center;
+            user-select: none;
+        }
+
+        .contactbottom {
+            font-family: regm;
+            font-size: small;
+            padding: 0.7em 1.5em;
+            color: hsl(0, 0%, 100%);
+            background-color: #282828;
+            border-radius: 25px;
+            transition-duration: 0.5s;
+
+        }
+
+        .contactbottom:hover {
+            background-color: #585858;
+        }
+
+        .footer .social {
+            margin: 2em 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer a {
+            margin: 0 1em;
+            font-size: x-small;
+            font-family: regm;
+            color: #bcbcbc;
+            transition-duration: 0.5s;
+
+        }
+
+        .footer a:hover {
+            color: white;
+        }
+
+        .footer .inner {
+            height: 8em;
+            width: 93vw;
+            background: linear-gradient(to bottom right, rgb(34, 34, 34), rgb(53, 53, 53));
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            color: white;
+            font-family: regm;
+            font-size: x-small;
+        }
+
+        .cover {
+            height: 100svh;
+            width: 100vw;
+            position: fixed;
+            pointer-events: none;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            z-index: 100;
+        }
+
+        .optionscon {
+            height: 3.2em;
+            padding: 0 0.5em;
+            aspect-ratio: 1/2;
+            background: rgba(162, 162, 162, 0.45);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(8.3px);
+            -webkit-backdrop-filter: blur(8.3px);
+            margin: 1em 0;
+            position: fixed;
+            border-radius: 30px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+            pointer-events: all;
+            z-index: 1000;
+
+        }
+
+        .optionscon.hidden {
+            transform: translateY(270%);
+        }
+
+        .optionscon .options {
+            font-size: medium;
+            color: white;
+            font-family: reg;
+            font-weight: bolder;
+            padding: 0.5em 1.5em;
+            border-radius: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+
+        }
+
+        .options img {
+            height: 0.5em;
+        }
+
+        #hello {
+
+            outline: 1px solid white;
+
+        }
+
+        .over {
+            height: 100vh;
+            width: 100vw;
+            background: rgba(255, 255, 255, 0.29);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(9.6px);
+            -webkit-backdrop-filter: blur(9.6px);
+            display: none;
+            position: fixed;
+        }
+    </style>
+    <script>
+
+        var lastScrollTop = 0;
+
+        window.addEventListener("scroll", function () {
+            var st = window.pageYOffset || document.documentElement.scrollTop;
+            if (st > lastScrollTop) {
+                // Scrolling down
+                document.getElementById("optionscon").classList.add("hidden");
+            } else {
+                // Scrolling up
+                document.getElementById("optionscon").classList.remove("hidden");
+            }
+            lastScrollTop = st <= 0 ? 0 : st;
+        });
+        function opn(a) {
+            const over = document.getElementById('over');
+            const hello = document.getElementById('hello');
+            const about = document.getElementById('about');
+            const news = document.getElementById('news')
+            if (a == '0') {
+                over.style.display = 'none';
+                about.style.outline = 'none';
+                news.style.outline = 'none';
+                hello.style.outline = '1px solid white';
+
+            }
+            else if (a == '1') {
+                over.style.display = 'flex';
+                about.style.outline = '1px solid white';
+                news.style.outline = 'none';
+                hello.style.outline = 'none';
+            }
+            else if (a == '2') {
+                over.style.display = 'flex';
+                about.style.outline = 'none';
+                news.style.outline = '1px solid white';
+                hello.style.outline = 'none';
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <div class="cover">
+        <div id="optionscon" class="optionscon">
+            <div id="hello" onclick="opn(0)" class="options ">Hello</div>
+            <div id="about" onclick="opn(1)" class="options">About</div>
+            <div id="news" onclick="opn(2)" class="options">News <img src="red.svg" alt="">
+            </div>
+        </div>
+    </div>
+    <div id="over" class="over"></div>
+    <div class="nav">
+        <img src="logo.svg" alt="" class="logo">
+        <p class="contact">Contact</p>
+    </div>
+    <div class="info">
+        <h5>
+            <img src="green.svg" alt="">Avaiable for new opportunities
+        </h5>
+        <h1>FullStack Web <br> Developer</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur <br> adipisicing elit. Sit, tenetur repellat illum <br>veniam iusto
+            Lorem, ipsum.
+            minima?
+        </p>
+    </div>
+    <div class="projectcontainer">
+        <p class="protxt">Projects &#9660;
+        </p>
+        <div class="projects"><img src="pix.svg" alt="">
+            <div class="proinfoconout">
+                <div class="proinfocon">
+                    <h4>Lorem ipsum dolor</h4>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+                <img class="arrow" src="arrow.svg" alt="">
+            </div>
+
+        </div>
+        <div class="projects"><img src="pix.svg" alt="">
+            <div class="proinfoconout">
+                <div class="proinfocon">
+                    <h4>Lorem ipsum dolor</h4>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+                <img class="arrow" src="arrow.svg" alt="">
+            </div>
+        </div>
+        <div class="projects"><img src="pix.svg" alt="">
+            <div class="proinfoconout">
+                <div class="proinfocon">
+                    <h4>Lorem ipsum dolor</h4>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+                <img class="arrow" src="arrow.svg" alt="">
+            </div>
+        </div>
+        <!-- to add -->
+        <div class="projects"><img src="pix.svg" alt="">
+            <div class="proinfoconout">
+                <div class="proinfocon">
+                    <h4>Lorem ipsum dolor</h4>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+                <img class="arrow" src="arrow.svg" alt="">
+            </div>
+        </div>
+        <!-- to add -->
+    </div>
+    <div class="footer">
+        <div class="contactbottom">Contact</div>
+        <div class="social">
+            <a href="https://github.com/AadeshSiva">GitHub</a>
+            <a href="https://www.linkedin.com/in/aadeshsiva/">LinkedIn</a>
+            <a href="https://www.instagram.com/aadeshsiv/">Instagram</a>
+            <a href="https://youtube.com/@AadeshSiva?si=-V7bMaUCaulid7GV">Youtube</a>
+        </div>
+        <div class="inner">&copy; Aadesh Siva</div>
+    </div>
+</body>
+
+</html>
