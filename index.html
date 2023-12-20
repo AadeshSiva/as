@@ -67,7 +67,15 @@
                 transform: translateY(0);
             }
         }
+   @keyframes faded {
+            from {
+                opacity: 0;
+            }
 
+            to {
+                opacity: 1;
+            }
+        }
         .nav {
             width: 100vw;
             display: flex;
@@ -334,6 +342,7 @@
             position: fixed;
             overflow: hidden;
             scroll-behavior: smooth;
+            animation: faded 0.2s ease-in;
         }
 
         .aboutmecontainer {
@@ -345,6 +354,7 @@
             top: 0;
             overflow: hidden;
             overflow-y: scroll;
+            animation: faded 0.2s ease-in;
         }
 
         .aboutme {
