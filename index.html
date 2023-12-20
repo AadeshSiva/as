@@ -334,9 +334,11 @@
             position: fixed;
             overflow: hidden;
             scroll-behavior: smooth;
+            animation: fade 1.2s forwards;
         }
 
         .aboutmecontainer {
+            padding: 1em;
             height: 100svh;
             display: none;
             flex-direction: column;
@@ -344,10 +346,11 @@
             top: 0;
             overflow: hidden;
             overflow-y: scroll;
+            animation: fade 0.2s ease;
         }
 
         .aboutme {
-            margin-top: 2em;
+            margin-top: 1.5em;
             width: 85vw;
             display: flex;
             flex-direction: column;
@@ -361,7 +364,7 @@
         .dp {
             height: 10em;
             margin: 2em 0 0 0;
-            animation: fadeInUp 0.5s ease-in;
+            animation: fadeInUp 0.3s ease-in;
 
         }
 
@@ -375,7 +378,7 @@
         .aboutme p {
             font-size: small;
             line-height: 1.5em;
-            animation: fadeInUp 0.5s ease-in;
+            animation: fadeInUp 0.3s ease-in;
 
         }
 
@@ -394,8 +397,6 @@
             color: hsl(240, 73%, 41%);
         }
 
-
-
         .skillscon {
             width: 85vw;
             display: flex;
@@ -403,10 +404,16 @@
             gap: 0.5em;
         }
 
+        .sktxt {
+            font-family: monospace;
+            font-size: xx-small;
+            margin: 1.5em 1em 0 1em;
+        }
+
         .skillscon .skills {
             padding: 1em;
             display: flex;
-            border-radius: 15px;
+            border-radius: 7px;
             justify-content: space-between;
             background: rgba(255, 255, 255, 0.347);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -414,7 +421,7 @@
             -webkit-backdrop-filter: blur(9.6px);
             font-family: regm;
             font-size: smaller;
-            animation: fadeInUp 0.5s ease-in;
+            animation: fadeInUp 0.3s ease;
 
         }
 
@@ -432,7 +439,7 @@
         }
 
         .socialicon {
-            margin: 1em 0 5em 0;
+            margin: 1.5em 0 5.5em 0;
             width: 85vw;
             background: rgba(255, 255, 255, 0.347);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -447,6 +454,66 @@
         .socialicon img {
             height: 1em;
             margin: 1em;
+        }
+
+        .newscon {
+            padding: 1em;
+            height: 100svh;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+            top: 0;
+            overflow: hidden;
+            overflow-y: scroll;
+        }
+
+        .feed {
+            margin-top: 2em;
+            width: 85vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 17px;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.347);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(9.6px);
+            -webkit-backdrop-filter: blur(9.6px);
+            animation: fadeInUp 0.2s ease-in;
+
+
+        }
+
+        .feed img {
+            width: 80vw;
+            border-radius: 10px;
+            margin: 1em;
+            margin-top: 0.7em;
+            animation: fadeInUp 0.3s ease-in;
+
+        }
+
+        .feedinfo {
+            width: 100%;
+            animation: fadeInUp 0.4s ease-in;
+
+        }
+
+        .feed h4 {
+            font-family: regm;
+            font-size: medium;
+            color: white;
+            margin: 0 1em;
+        }
+
+        .feed p {
+            font-family: reg;
+            font-weight: bold;
+            font-size: small;
+            color: white;
+            margin: 0.5em 1.5em 2em 1.5em;
         }
 
         @media(min-width:720px) {
@@ -497,19 +564,22 @@
             const news = document.getElementById('news');
             const body = document.getElementById('body');
             const aboutme = document.getElementById('aboutmecontainer');
+            const newscon = document.getElementById('newscon');
+
             if (a == '0') {
                 body.style.overflowY = 'scroll';
                 aboutme.style.display = 'none'
                 over.style.display = 'none';
+                newscon.style.display = 'none'
                 about.style.outline = 'none';
                 news.style.outline = 'none';
                 hello.style.outline = '1px solid white';
-
             }
             else if (a == '1') {
                 aboutme.style.display = 'flex'
                 body.style.overflowY = 'hidden';
                 over.style.display = 'flex';
+                newscon.style.display = 'none'
                 about.style.outline = '1px solid white';
                 news.style.outline = 'none';
                 hello.style.outline = 'none';
@@ -517,6 +587,7 @@
             else if (a == '2') {
                 body.style.overflowY = 'hidden';
                 aboutme.style.display = 'none'
+                newscon.style.display = 'flex'
                 over.style.display = 'flex';
                 about.style.outline = 'none';
                 news.style.outline = '1px solid white';
@@ -564,7 +635,7 @@
                 </div>
             </div>
             <div class="skillscon">
-                <p>Skills &#9660;</p>
+                <p class="sktxt">Skills &#9660;</p>
                 <div class="skills">HTML / CSS / JS</div>
                 <div class="skills">NodeJS / Flask / Django</div>
                 <div class="skills">C / C++ / Python /Java </div>
@@ -578,6 +649,14 @@
                 <a href="https://www.linkedin.com/in/aadeshsiva/"><img src="linkedin.svg" alt=""></a>
                 <a href="https://www.instagram.com/aadeshsiv/"><img src="insta.svg" alt=""></a>
                 <a href="https://youtube.com/@AadeshSiva?si=-V7bMaUCaulid7GV"><img src="youtube.svg" alt=""></a>
+            </div>
+        </div>
+        <div id="newscon" class="newscon">
+            <div class="feed"><img src="/Certificates/JAVA(adda).svg" alt="">
+                <div class="feedinfo">
+                    <h4>Java Certification</h4>
+                    <p>Sucessfully Completed Java beignner level quiz with 90%</p>
+                </div>
             </div>
         </div>
     </div>
