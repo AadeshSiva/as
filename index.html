@@ -334,7 +334,6 @@
             position: fixed;
             overflow: hidden;
             scroll-behavior: smooth;
-            animation: fade 1.2s forwards;
         }
 
         .aboutmecontainer {
@@ -346,7 +345,6 @@
             top: 0;
             overflow: hidden;
             overflow-y: scroll;
-            animation: fade 0.2s ease;
         }
 
         .aboutme {
@@ -421,7 +419,7 @@
             -webkit-backdrop-filter: blur(9.6px);
             font-family: regm;
             font-size: smaller;
-            animation: fadeInUp 0.3s ease;
+            animation: fadeInUp 0.3s ease-in;
 
         }
 
@@ -481,9 +479,6 @@
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(9.6px);
             -webkit-backdrop-filter: blur(9.6px);
-            animation: fadeInUp 0.2s ease-in;
-
-
         }
 
         .feed img {
@@ -497,8 +492,6 @@
 
         .feedinfo {
             width: 100%;
-            animation: fadeInUp 0.4s ease-in;
-
         }
 
         .feed h4 {
@@ -509,9 +502,8 @@
         }
 
         .feed p {
-            font-family: reg;
-            font-weight: bold;
-            font-size: small;
+            font-family: regm;
+            font-size: x-small;
             color: white;
             margin: 0.5em 1.5em 2em 1.5em;
         }
@@ -574,6 +566,7 @@
                 about.style.outline = 'none';
                 news.style.outline = 'none';
                 hello.style.outline = '1px solid white';
+
             }
             else if (a == '1') {
                 aboutme.style.display = 'flex'
